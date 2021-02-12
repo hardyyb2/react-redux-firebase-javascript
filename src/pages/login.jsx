@@ -6,7 +6,9 @@ import { loginUser } from "../store/operations";
 import styles from "../styles/PageStyles/Login.module.css";
 
 const LoginPage = () => {
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const {
+    auth: { isAuthenticated },
+  } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   if (isAuthenticated) {

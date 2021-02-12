@@ -9,10 +9,11 @@ import { logoutUser } from "../store/operations";
 import styles from "../styles/PageStyles/Home.module.css";
 
 const HomePage = () => {
-  const user = useSelector((state) => state.auth.user);
+  const {
+    auth: { user },
+  } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  console.log(user);
   return (
     <div>
       <div className={styles.welcomeTextContainer}>
