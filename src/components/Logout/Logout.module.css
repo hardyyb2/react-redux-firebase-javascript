@@ -1,8 +1,8 @@
 .logoutButton {
-  font-size: 1.2rem;
+  font-size: 2.5em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
-  padding: 10px 20px;
+  padding: calc(var(--size) * 1.5) calc(var(--size) * 3);
   border: none;
   font-weight: bold;
   cursor: pointer;

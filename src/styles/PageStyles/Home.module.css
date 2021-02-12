@@ -1,5 +1,5 @@
 .welcomeTextContainer {
-  font-size: 1.4rem;
+  font-size: 3.5em;
   color: rgba(255, 255, 255, 1);
-  margin-bottom: 20px;
+  margin-bottom: calc(var(--size) * 2.5);
 }
