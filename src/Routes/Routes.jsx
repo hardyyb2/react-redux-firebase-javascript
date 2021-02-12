@@ -30,6 +30,7 @@ const Routes = ({ isAuthenticated, isVerifying }) => {
           routes.map(({ component, path, exact, isProtected }, index) =>
             isProtected ? (
               <ProtectedRoute
+                key={index}
                 exact={exact}
                 path={path}
                 component={component}
@@ -37,7 +38,7 @@ const Routes = ({ isAuthenticated, isVerifying }) => {
                 isVerifying={isVerifying}
               />
             ) : (
-              <Route path={path} component={component} />
+              <Route key={index} path={path} component={component} />
             )
           )}
       </Suspense>
