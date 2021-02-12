@@ -1,0 +1,19 @@
+.layoutWrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.layoutContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mention a {
+  color: white;
+  text-decoration: none;
+  float: right;
+  margin: 10px 20px;
+}
