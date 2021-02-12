@@ -3,6 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-flow: column;
+  overflow-y: hidden;
 }
 
 .layoutContainer {
@@ -11,6 +12,7 @@
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
+  overflow-y: hidden;
 }
 
 .mention a {

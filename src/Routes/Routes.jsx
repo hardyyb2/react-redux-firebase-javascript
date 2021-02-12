@@ -6,6 +6,7 @@ import { Spinner } from "../common";
 
 const Login = lazy(() => import("../pages/login"));
 const Home = lazy(() => import("../pages/home"));
+const NotFound = lazy(() => import("../pages/404"));
 
 const routes = [
   {
@@ -17,15 +18,15 @@ const routes = [
   {
     component: Login,
     path: "/login",
-    exact: false,
+    exact: true,
     isProtected: false,
   },
 ];
 
 const Routes = ({ isAuthenticated, isVerifying }) => {
   return (
-    <Switch>
-      <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<Spinner />}>
+      <Switch>
         {routes &&
           routes.map(({ component, path, exact, isProtected }) =>
             isProtected ? (
@@ -38,11 +39,17 @@ const Routes = ({ isAuthenticated, isVerifying }) => {
                 isVerifying={isVerifying}
               />
             ) : (
-              <Route key={path} path={path} component={component} />
+              <Route
+                key={path}
+                exact={exact}
+                path={path}
+                component={component}
+              />
             )
           )}
-      </Suspense>
-    </Switch>
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 };
 

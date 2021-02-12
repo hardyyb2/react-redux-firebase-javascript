@@ -9,6 +9,7 @@ const Image = ({
   height = "auto",
   objectFit = "cover",
   radius = 0,
+  margin,
 }) => {
   return (
     <div
@@ -20,6 +21,7 @@ const Image = ({
         minHeight: height,
         objectFit,
         borderRadius: radius,
+        ...(margin && { margin }),
       }}
     >
       <img src={src} alt={alt} className={styles.image} />

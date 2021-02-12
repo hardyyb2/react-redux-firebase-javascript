@@ -5,4 +5,9 @@
 
 body {
   color: var(--primary-font);
+  overflow-y: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
