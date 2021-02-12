@@ -27,10 +27,10 @@ const Routes = ({ isAuthenticated, isVerifying }) => {
     <Switch>
       <Suspense fallback={<Spinner />}>
         {routes &&
-          routes.map(({ component, path, exact, isProtected }, index) =>
+          routes.map(({ component, path, exact, isProtected }) =>
             isProtected ? (
               <ProtectedRoute
-                key={index}
+                key={path}
                 exact={exact}
                 path={path}
                 component={component}
@@ -38,7 +38,7 @@ const Routes = ({ isAuthenticated, isVerifying }) => {
                 isVerifying={isVerifying}
               />
             ) : (
-              <Route key={index} path={path} component={component} />
+              <Route key={path} path={path} component={component} />
             )
           )}
       </Suspense>
