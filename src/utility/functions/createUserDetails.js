@@ -1,4 +1,4 @@
-export const createUserDetails = (user) => {
+const createUserDetails = (user) => {
   const userDetails = {
     displayName: user?.displayName ?? "",
     email: user?.email ?? "",
@@ -9,3 +9,5 @@ export const createUserDetails = (user) => {
   };
   return userDetails;
 };
+
+export default createUserDetails;

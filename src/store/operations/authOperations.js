@@ -1,5 +1,5 @@
 import { auth, googleProvider, myFirebase } from "../../firebase";
-import { createErrorMessage } from "../../utility";
+import { createErrorMessage, createUserDetails } from "../../utility/functions";
 import {
   loginRequest,
   loginSuccess,
@@ -11,7 +11,6 @@ import {
   verifySuccess,
   verifyError,
 } from "../actions";
-import { createUserDetails } from "../utility";
 
 export const loginUser = () => async (dispatch) => {
   dispatch(loginRequest());
