@@ -13,19 +13,19 @@ import {
  *  LOGIN
  * */
 
-export const loginRequest = () => ({
+const loginRequest = () => ({
   type: LOGIN_REQUEST,
   payload: null,
   error: null,
 });
 
-export const loginSuccess = (user) => ({
+const loginSuccess = (user) => ({
   type: LOGIN_SUCCESS,
   payload: user,
   error: null,
 });
 
-export const loginError = (error) => ({
+const loginError = (error) => ({
   type: LOGIN_ERROR,
   payload: null,
   error,
@@ -35,19 +35,19 @@ export const loginError = (error) => ({
  * VERIFY
  */
 
-export const verifyRequest = () => ({
+const verifyRequest = () => ({
   type: VERIFY_REQUEST,
   payload: null,
   error: null,
 });
 
-export const verifySuccess = (user) => ({
+const verifySuccess = (user) => ({
   type: VERIFY_SUCCESS,
   payload: user,
   error: null,
 });
 
-export const verifyError = (error) => ({
+const verifyError = (error) => ({
   type: VERIFY_ERROR,
   payload: null,
   error,
@@ -57,20 +57,36 @@ export const verifyError = (error) => ({
  * LOGOUT
  */
 
-export const logoutRequest = () => ({
+const logoutRequest = () => ({
   type: LOGOUT_REQUEST,
   payload: null,
   error: null,
 });
 
-export const logoutSuccess = () => ({
+const logoutSuccess = () => ({
   type: LOGOUT_SUCCESS,
   payload: null,
   error: null,
 });
 
-export const logoutError = (error) => ({
+const logoutError = (error) => ({
   type: LOGOUT_ERROR,
   payload: null,
   error,
 });
+
+const authActions = {
+  loginRequest,
+  loginSuccess,
+  loginError,
+
+  verifyRequest,
+  verifySuccess,
+  verifyError,
+
+  logoutRequest,
+  logoutSuccess,
+  logoutError,
+};
+
+export default authActions;

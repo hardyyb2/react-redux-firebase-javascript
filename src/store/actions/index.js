@@ -1,1 +1,1 @@
-export * from './authActions'
+export { default as authActions } from "./authActions";

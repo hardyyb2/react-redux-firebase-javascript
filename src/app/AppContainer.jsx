@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { verifyUser } from "../store/operations";
+import { authOperations } from "../store/operations";
 
 import App from "./App";
 
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    verifyUserConnect: () => dispatch(verifyUser()),
+    verifyUserConnect: () => dispatch(authOperations.verifyUser()),
   };
 };
 

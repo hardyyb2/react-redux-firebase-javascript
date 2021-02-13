@@ -1,7 +1,7 @@
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { loginUser } from "../store/operations";
+import { authOperations } from "../store/operations";
 
 import styles from "../styles/PageStyles/Login.module.css";
 
@@ -18,7 +18,7 @@ const LoginPage = () => {
   return (
     <div>
       <button
-        onClick={() => dispatch(loginUser())}
+        onClick={() => dispatch(authOperations.loginUser())}
         className={styles.loginButton}
       >
         Login

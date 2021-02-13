@@ -1,1 +1,1 @@
-export * from "./authOperations";
+export { default as authOperations } from "./authOperations";

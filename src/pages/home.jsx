@@ -4,7 +4,7 @@ import { Image } from "../common";
 import { Logout } from "../components";
 import { UserImage } from "./../assets/images";
 
-import { logoutUser } from "../store/operations";
+import { authOperations } from "../store/operations";
 
 import styles from "../styles/PageStyles/Home.module.css";
 
@@ -22,7 +22,7 @@ const HomePage = () => {
         </center>
         Welcome, {user?.displayName}
       </div>
-      <Logout handleLogout={() => dispatch(logoutUser())} />
+      <Logout handleLogout={() => dispatch(authOperations.logoutUser())} />
     </div>
   );
 };

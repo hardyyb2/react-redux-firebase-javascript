@@ -1,19 +1,9 @@
 import { auth, googleProvider, myFirebase } from "../../firebase";
-import { createErrorMessage, createUserDetails } from "../../utility/functions";
-import {
-  loginRequest,
-  loginSuccess,
-  loginError,
-  logoutRequest,
-  logoutSuccess,
-  logoutError,
-  verifyRequest,
-  verifySuccess,
-  verifyError,
-} from "../actions";
+import { createErrorMessage, createUserDetails } from "../../utils/functions";
+import { authActions } from "../actions";
 
-export const loginUser = () => async (dispatch) => {
-  dispatch(loginRequest());
+const loginUser = () => async (dispatch) => {
+  dispatch(authActions.loginRequest());
 
   try {
     const { user } = await auth.signInWithPopup(googleProvider);
@@ -23,43 +13,51 @@ export const loginUser = () => async (dispatch) => {
     if (user?.uid) {
       localStorage.setItem("user", JSON.stringify(userDetails));
     }
-    dispatch(loginSuccess(userDetails));
+    dispatch(authActions.loginSuccess(userDetails));
   } catch (error) {
     const message = createErrorMessage(error);
-    dispatch(loginError(message));
+    dispatch(authActions.loginError(message));
   }
 };
 
-export const verifyUser = () => async (dispatch) => {
-  dispatch(verifyRequest());
+const verifyUser = () => async (dispatch) => {
+  dispatch(authActions.verifyRequest());
   myFirebase.auth().onAuthStateChanged(
     (user) => {
       if (user) {
         const userDetails = createUserDetails(user);
-        dispatch(verifySuccess(userDetails));
+        dispatch(authActions.verifySuccess(userDetails));
       } else {
         const err = {
           code: "auth/no-user",
           message: "No user found",
         };
         const message = createErrorMessage(err);
-        dispatch(verifyError(message));
+        dispatch(authActions.verifyError(message));
       }
     },
     (error) => {
       const message = createErrorMessage(error);
-      dispatch(verifyError(message));
+      dispatch(authActions.verifyError(message));
     }
   );
 };
 
-export const logoutUser = () => async (dispatch) => {
-  dispatch(logoutRequest());
+const logoutUser = () => async (dispatch) => {
+  dispatch(authActions.logoutRequest());
   try {
     await auth.signOut();
-    dispatch(logoutSuccess());
+    dispatch(authActions.logoutSuccess());
   } catch (error) {
     const message = createErrorMessage(error);
-    dispatch(logoutError(message));
+    dispatch(authActions.logoutError(message));
   }
 };
+
+const authOperations = {
+  loginUser,
+  verifyUser,
+  logoutUser,
+};
+
+export default authOperations;
