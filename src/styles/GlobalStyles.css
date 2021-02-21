@@ -4,7 +4,7 @@
 }
 
 body {
-  color: var(--primary-font);
+  color: var(--primary-color);
   overflow-y: hidden;
 }
 
