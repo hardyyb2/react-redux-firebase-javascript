@@ -1,5 +1,11 @@
 import { auth, googleProvider, myFirebase } from "../../firebase";
-import { createErrorMessage, createUserDetails } from "../../utils/functions";
+import { LOCALSTORAGE_USER_KEY } from "../../utils/constants";
+import {
+  createErrorMessage,
+  createUserDetails,
+  deleteFromLocalStorage,
+  saveToLocalStorage,
+} from "../../utils/functions";
 import { authActions } from "../actions";
 
 const loginUser = () => async (dispatch) => {
@@ -15,7 +21,7 @@ const loginUser = () => async (dispatch) => {
     const userDetails = createUserDetails(user);
 
     if (user?.uid) {
-      localStorage.setItem("user", JSON.stringify(userDetails));
+      saveToLocalStorage(LOCALSTORAGE_USER_KEY, userDetails);
     }
     dispatch(authActions.loginSuccess(userDetails));
   } catch (error) {
@@ -51,6 +57,7 @@ const logoutUser = () => async (dispatch) => {
   dispatch(authActions.logoutRequest());
   try {
     await auth.signOut();
+    deleteFromLocalStorage(LOCALSTORAGE_USER_KEY);
     dispatch(authActions.logoutSuccess());
   } catch (error) {
     const message = createErrorMessage(error);
