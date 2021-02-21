@@ -7,3 +7,8 @@
 - **Files** -
   - _GlobalStyles_ - stores global styles and CSS vars, colors etc
   - _TypoGraphy_ - stores font related global styles and CSS vars, any addtional fonts to be imported here
+
+> More -
+>
+> - [CSS-modules and why use them](https://css-tricks.com/css-modules-part-1-need/)
+> - [CSS variables](https://www.freecodecamp.org/news/everything-you-need-to-know-about-css-variables-c74d922ea855/)

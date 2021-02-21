@@ -10,3 +10,5 @@
   - _selectors_ - used to store selectors (functions to modify state object and return it)
 - **Files** -
   - _configureStore_ - redux configuration file to combine reducers and add other middlewares e.g. redux-thunk, redux-logger and also config for redux dev tools
+
+> More - [What is Redux and why use it](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/)

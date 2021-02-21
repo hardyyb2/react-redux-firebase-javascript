@@ -1,6 +1,40 @@
-# Getting Started with Create React App
+# Getting Started
+
+## React Redux Firebase (react-redux-firebase)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## About Project -
+
+- This is a template built upon create-react-app
+- redux and firebase config are already setup, along with firebase authentication (Google)
+- Technologies used -
+  - React
+  - Redux
+  - Firebase
+  - Javascript
+- Other Packages used -
+  - react-redux
+  - redux
+  - redux-thunk
+  - redux-logger
+  - react-router-dom
+  - firebase
+
+## Get Started
+
+### (All steps from root)
+
+- [Login to firebase console](https://console.firebase.google.com/u/0/)
+- [Setup Firebase for Web](https://firebase.google.com/docs/web/setup)
+- Rename **.env.example** to **.env** and add your firebase keys
+- Install dependencies
+  - **yarn** or **npm install**
+- Start the app
+  - **yarn start** or **npm start**
+- Project runs live on http://localhost:3000
+
+<br />
 
 ## Available Scripts
 
@@ -14,10 +48,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `yarn analyze`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Source map explorer analyzes JavaScript bundles using the source maps. This helps you understand where code bloat is coming from.
 
 ### `yarn build`
 
@@ -28,6 +61,11 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn eject`
 
@@ -47,7 +85,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/doc\s/code-splitting)
 
 ### Analyzing the Bundle Size
 
