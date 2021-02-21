@@ -48,7 +48,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn analyze`
+### `yarn analyze` (change GENERATE_SOURCEMAP=true in .env before running)
 
 Source map explorer analyzes JavaScript bundles using the source maps. This helps you understand where code bloat is coming from.
 
