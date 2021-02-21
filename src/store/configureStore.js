@@ -5,6 +5,10 @@ import logger from "redux-logger";
 import rootReducer from "./reducers";
 
 const configureStore = () => {
+  /** For redux dev tools
+   *  Check here -
+   *  https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+   */
   const composeEnhancers =
     typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
       ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__

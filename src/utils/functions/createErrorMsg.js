@@ -5,6 +5,10 @@ const createErrorMessage = (error) => {
 
   console.log(error);
 
+  /**
+   * More about firebase errors here -
+   * https://firebase.google.com/docs/reference/js/firebase.auth.Error
+   */
   switch (code) {
     case Codes.INVALID_TOKEN:
       return Messages.INVALID_TOKEN_MSG;

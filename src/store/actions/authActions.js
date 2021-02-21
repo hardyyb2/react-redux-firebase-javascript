@@ -11,7 +11,7 @@ import {
 } from "../constants";
 /**
  *  LOGIN
- * */
+ **/
 
 const loginRequest = () => ({
   type: LOGIN_REQUEST,
@@ -33,7 +33,7 @@ const loginError = (error) => ({
 
 /**
  * VERIFY
- */
+ **/
 
 const verifyRequest = () => ({
   type: VERIFY_REQUEST,
@@ -55,7 +55,7 @@ const verifyError = (error) => ({
 
 /**
  * LOGOUT
- */
+ **/
 
 const logoutRequest = () => ({
   type: LOGOUT_REQUEST,

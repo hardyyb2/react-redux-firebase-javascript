@@ -9,6 +9,7 @@ import styles from "./App.module.css";
 
 const App = ({ isVerifying, isAuthenticated, verifyUserConnect }) => {
   useEffect(() => {
+    /** Verify user on page load or refresh*/
     verifyUserConnect();
   }, []);
 

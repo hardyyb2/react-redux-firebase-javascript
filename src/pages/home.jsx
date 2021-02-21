@@ -1,11 +1,15 @@
+/** External packages imported at top */
 import { useDispatch, useSelector } from "react-redux";
 
+/** Relative components, files and assets*/
 import { Image } from "../common";
 import { Logout } from "../components";
 import { UserImage } from "./../assets/images";
 
+/** global store or context */
 import { authOperations } from "../store/operations";
 
+/** styles */
 import styles from "../styles/PageStyles/Home.module.css";
 
 const HomePage = () => {
